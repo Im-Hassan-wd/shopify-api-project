@@ -1,0 +1,193 @@
+/*
+------------------ Global Syles*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", sans-serif;
+}
+.showcase {
+  min-height: 100vh;
+  transition: all 0.7s linear;
+}
+.showcase.active {
+  background: #0e0a22;
+  color: #fff;
+  transition: all 0.7s linear;
+}
+.intro header {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+}
+.fa-moon {
+  position: absolute;
+  left: 1px;
+  top: 10px;
+  background: #0e0a22;
+  color: #fff;
+  padding: 5px;
+  transition: all 0.7s linear;
+  cursor: pointer;
+}
+.fa-moon.active {
+  background: #fff;
+  color: #0e0a22;
+  transition: all 0.7s linear;
+}
+/*
+------------------ main content*/
+.main-content input {
+  padding: 5px 0;
+  width: 200px;
+  border: 1px solid #555;
+  outline: none;
+  background: none;
+}
+.main-content input.active {
+  color: #fff;
+}
+.main-content button {
+  padding: 5px 0;
+  width: 50px;
+  background: #000;
+  border: 1px solid #000;
+  outline: none;
+  margin-left: -5px;
+  color: #fff;
+}
+.main-content .fas {
+  color: #fff;
+  cursor: pointer;
+  /* font-size: 16px; */
+}
+
+.nominate {
+  width: 120px;
+  padding: 5px;
+  border: 1px solid #555;
+  cursor: pointer;
+  background: #555;
+  color: #fff;
+}
+.nominate.active {
+  animation: shake 0.5s linear both;
+}
+.nominate-banner {
+  position: absolute;
+  right: 20px;
+  width: 0px;
+  background: #555;
+  transition: all 1s ease-in-out;
+  overflow: hidden;
+}
+.nominate-banner.active {
+  width: 500px;
+  transition: all 1s ease-in-out;
+}
+.nomi-text {
+  position: absolute;
+  right: 20px;
+  top: 0px;
+  color: #ff0000;
+  transition: all 0.5s ease-in-out;
+}
+/*
+------------------ movie content*/
+.showcase h1 {
+  font-size: 2rem;
+  font-weight: 300;
+}
+.showcase h2 {
+  font-size: 1rem;
+  font-weight: 100;
+  width: 200px;
+}
+.main-content {
+  padding: 0 30px;
+}
+.movie-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 20px;
+}
+.movie-content .container {
+  display: flex;
+  /* justify-content: space-between; */
+}
+.movie-content button {
+  width: 120px;
+  padding: 5px;
+  background: none;
+  border: 1px solid #555;
+  cursor: pointer;
+  background: #555;
+  color: #fff;
+}
+/* .hollywood,
+.bollywood,
+.nollywood {
+  border-left: 2px solid #555;
+  padding: 10px;
+}*/
+.movie-title,
+.movie-year {
+  padding: 0 10px;
+}
+.movie {
+  padding: 50px 5px;
+}
+.movie-image {
+  width: 50%;
+}
+img {
+  width: 100%;
+}
+
+/*
+------------Media Query*/
+
+@media (max-width: 1024px) {
+  .movie-content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 800px) {
+  .nominate-banner.active {
+    padding: 0;
+    width: 200px;
+    transition: all 1s ease-in-out;
+  }
+  .movie-content {
+    grid-template-columns: 1fr 1fr;
+  }
+  .movie-image {
+    width: 60%;
+  }
+}
+
+@media (max-width: 420px) {
+  .movie-content {
+    grid-template-columns: 1fr;
+  }
+  .movie-image {
+    width: 40%;
+  }
+}
+
+/*
+--------- Animation*/
+@keyframes shake {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(5deg);
+  }
+  75% {
+    transform: rotateZ(-5deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
